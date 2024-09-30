@@ -102,6 +102,8 @@ if(MINGW)
   target_compile_definitions(${PROJECT_NAME} PUBLIC -D_WIN32_WINNT=0x0601)
 endif(MINGW)
 
+target_compile_definitions(${PROJECT_NAME} PUBLIC -D_TIME_BITS=64 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D_DEFAULT_SOURCE)
+
 set(TRANTOR_SOURCES
     trantor/utils/AsyncFileLogger.cc
     trantor/utils/ConcurrentTaskQueue.cc
